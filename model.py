@@ -20,20 +20,30 @@ class Gearbox(object):
         self.wheels = {}
         self.currentGear = 0
         self.clutchEngaged = False
-        self.gears [0, 0.8, 1, 1.4, 2.2, 3.8]
+        self.gears = [0, 0.8, 1, 1.4, 2.2, 3.8]
 
         listOWheels = ["frontLeft", "frontRight", "rearLeft", "rearRight"]
         for e in listOWheels:
             self.wheels[e] = Wheel()
 
     def shiftUp(self):
-        pass
+        if self.currentGear + 2 > len(self.gears) or self.clutchEngaged == True:
+            pass
+        else:
+            self.currentGear += 1
 
     def shiftDown(self):
-        pass
+        if self.currentGear == 0 or self.clutchEngaged == True:
+            pass
+        else:
+            self.currentGear -= 1
 
     def rotate(self, revolutions):
-        pass
+        if self.clutchEngaged != True:
+            pass
+        else:
+            for e in self.wheels:
+                self.wheels[e].rotate(revolutions * self.gears[self.currentGear])
 
 class Tank(object):
 
@@ -45,7 +55,7 @@ class Tank(object):
         self.contents = self.capacity
 
     def remove(self, amount):
-        if(self.contents - amount < 0):
+        if self.contents - amount < 0:
             self.contents = 0
         else:
             self.contents = self.contents - amount
