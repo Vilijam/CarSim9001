@@ -1,7 +1,12 @@
 from random import randint
 
 class Car(object):
-    pass
+
+    def __init__(self):
+        self.theEngine = Engine()
+
+    def updateModel(self, dt):
+        self.theEngine.updateModel(dt)
 
 class Wheel(object):
 
@@ -29,9 +34,6 @@ class Engine(object):
         else:
             self.currentRpm = 0
 
-
-
-    pass
 class Gearbox(object):
 
     def __init__(self):
