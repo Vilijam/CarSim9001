@@ -58,14 +58,14 @@ class Gearbox(object):
             #Jeg gad ikke skrive xxx = Wheel() * 4, så jeg gjorde det sådan.
 
     def shiftUp(self):
-        if self.currentGear + 2 > len(self.gears) or self.clutchEngaged == True:
+        if self.currentGear + 2 > len(self.gears) and self.clutchEngaged == False:
             #tjekker om der er et højere gear
             pass
         else:
             self.currentGear += 1
 
     def shiftDown(self):
-        if self.currentGear == 0 or self.clutchEngaged == True:
+        if self.currentGear == 0 and self.clutchEngaged == False:
             #den kan ikke gå ned i gear, hvis den allerede er i bakgear
             pass
         else:
