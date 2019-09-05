@@ -55,7 +55,7 @@ class Gearbox(object):
             self.wheels[e] = Wheel()
 
             #Hvorfor deklarede jeg hjulene på denne måde? idfk, jeg er dum, tror jeg.
-            #Jeg gad ikke skrive xxx = Wheel() * 4, så jeg gjorde det sådan.
+            #Jeg gad ikke skrive xxx = Wheel() fire gange, så jeg gjorde det sådan.
 
     def shiftUp(self):
         if self.currentGear < len(self.gears) -1 and self.clutchEngaged == False:
