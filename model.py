@@ -12,7 +12,7 @@ class Car(object):
 class Wheel(object):
 
     def __init__(self):
-        self.orientation = randint(1,360)
+        self.orientation = randint(0,360)
         #Hjulet bliver tildelt en tilfældig orientation
 
     def rotate(self, revolutions):
